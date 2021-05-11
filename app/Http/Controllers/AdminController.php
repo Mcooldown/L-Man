@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     public function viewListClass(){
-        return view('pages.admin.list_class',[
+        return view('admin.class-list',[
             'classes' => ClassDetail::where('institution_id', auth()->user()->institution_id)->get(),
         ]);
     }
 
     public function viewCreateClass(){
-        return view('pages.admin.create_class',[
+        return view('admin.class-create',[
             'teachers' => User::select('users.id','users.name')
                         ->join('roles','roles.id','users.role_id')
                         ->where('roles.name','Teacher')
@@ -40,7 +40,7 @@ class AdminController extends Controller
     }
 
     public function viewClassStudent(ClassDetail $class){
-        return view('pages.admin.list_class_student',[
+        return view('admin.class-student-list',[
             'students' => User::select('users.id','users.name')
                         ->join('roles','roles.id','users.role_id')
                         ->where([['roles.name','Student'],['class_id',$class->id]])
@@ -50,7 +50,7 @@ class AdminController extends Controller
     }
 
     public function viewListStudent(){
-        return view('pages.admin.list_student',[
+        return view('admin.student-list',[
             'students' => User::select('users.id','users.name')
                         ->join('roles','roles.id','users.role_id')
                         ->where([['roles.name','Student'],['institution_id',auth()->user()->institution_id]])
@@ -59,7 +59,7 @@ class AdminController extends Controller
     }
 
     public function viewCreateStudent(){
-        return view('pages.admin.create_student',[
+        return view('admin.student-create',[
             'classes' => ClassDetail::where('institution_id',auth()->user()->institution_id)->get()
         ]);
     }
@@ -68,7 +68,7 @@ class AdminController extends Controller
         
         $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'reg_number' => 'required|numeric',
             'phone_number' => 'required|numeric',
         ]);
@@ -86,4 +86,41 @@ class AdminController extends Controller
 
         return redirect()->route('student-view-list')->with('success','New Student Created');
     }
+
+    public function viewListTeacher(){
+        return view('admin.teacher-list',[
+            'teachers' => User::select('users.id','users.name')
+                        ->join('roles','roles.id','users.role_id')
+                        ->where([['roles.name','Teacher'],['institution_id',auth()->user()->institution_id]])
+                        ->get()
+        ]);
+    }
+
+    public function viewCreateTeacher(){
+        return view('admin.teacher-create');
+    }
+
+    public function createTeacher(Request $request){
+        
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'reg_number' => 'required|numeric',
+            'phone_number' => 'required|numeric',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'reg_number' => $request->reg_number,
+            'phone_number' => $request->phone_number,
+            'role_id' => 2,
+            'institution_id' => auth()->user()->institution->id,
+            'password' => Hash::make('abcd')
+        ]);
+
+        return redirect()->route('teacher-view-list')->with('success','New Teacher Created');
+    }
+
+    
 }

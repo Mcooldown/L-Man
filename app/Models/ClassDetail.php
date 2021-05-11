@@ -16,4 +16,8 @@ class ClassDetail extends Model
     public function homeroom(){
         return $this->hasOne('App\Models\User','id','homeroom_id')->withDefault();
     }
+
+    public function student(){
+        return $this->hasMany('App\Models\User','class_id','id');
+    }
 }

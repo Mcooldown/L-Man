@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Institution extends Model
+class Activity extends Model
 {
     use HasFactory;
-    protected $table = 'institutions';
+    protected $table = 'activities';
     protected $primaryKey = 'id';
     protected $timestamp = true;
     protected $guarded = [];
 
-    public function class(){
-        return $this->hasMany('App\Models\ClassDetail','institution_id','id');
+    public function classCourse(){
+        return $this->hasOne('App\Models\ClassCourse','id','class_course_id')->withDefault();
     }
+
 }
