@@ -1,4 +1,4 @@
-<x-app title="Register Institution - L-Man">
+<x-master title="Register Institution - L-Man">
     <x-slot name="navbar"></x-slot>
     <div class="container py-5 my-5">
         <div class="row justify-content-center">
@@ -17,8 +17,7 @@
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                         class="form-control @error('pic_name') is-invalid @enderror" name="pic_name"
-                                        value="{{ old('pic_name') }}" required autocomplete="pic_name"
-                                        autofocus>
+                                        value="{{ old('pic_name') }}" required autocomplete="pic_name" autofocus>
 
                                     @error('pic_name')
                                         <span class="invalid-feedback" role="alert">
@@ -51,8 +50,9 @@
 
                                 <div class="col-md-6">
                                     <input id="institution_name" type="text"
-                                        class="form-control @error('institution_name') is-invalid @enderror" name="institution_name"
-                                        value="{{ old('institution_name') }}" required autocomplete="institution_name">
+                                        class="form-control @error('institution_name') is-invalid @enderror"
+                                        name="institution_name" value="{{ old('institution_name') }}" required
+                                        autocomplete="institution_name">
 
                                     @error('institution_name')
                                         <span class="invalid-feedback" role="alert">
@@ -67,13 +67,12 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Institution Email') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="institution_email"" type="email"
+                                    <input id="institution_email"" type=" email"
                                         class="form-control @error('institution_email"') is-invalid @enderror" name="institution_email""
                                         value="{{ old('institution_email"') }}" required autocomplete="institution_email">
 
-                                    @error('institution_email"')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                    @error(' institution_email"') <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
@@ -85,8 +84,9 @@
 
                                 <div class="col-md-6">
                                     <input id="institution_address" type="text"
-                                        class="form-control @error('institution_address') is-invalid @enderror" name="institution_address"
-                                        value="{{ old('institution_address') }}" required autocomplete="institution_address">
+                                        class="form-control @error('institution_address') is-invalid @enderror"
+                                        name="institution_address" value="{{ old('institution_address') }}" required
+                                        autocomplete="institution_address">
 
                                     @error('institution_address')
                                         <span class="invalid-feedback" role="alert">
@@ -102,8 +102,9 @@
 
                                 <div class="col-md-6">
                                     <input id="phone_number" type="text"
-                                        class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
-                                        value="{{ old('phone_number') }}" required autocomplete="phone_number">
+                                        class="form-control @error('phone_number') is-invalid @enderror"
+                                        name="phone_number" value="{{ old('phone_number') }}" required
+                                        autocomplete="phone_number">
 
                                     @error('phone_number')
                                         <span class="invalid-feedback" role="alert">
@@ -126,4 +127,4 @@
             </div>
         </div>
     </div>
-</x-app>
+</x-master>

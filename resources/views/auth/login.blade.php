@@ -1,4 +1,4 @@
-<x-app title="Login - L-Man">
+<x-master title="Login - L-Man">
 
     <x-slot name="navbar"></x-slot>
 
@@ -19,8 +19,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email"
-                                        autofocus>
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -44,9 +43,8 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                    @if(Route::has('password.request'))
-                                        <a class="btn btn-link "
-                                            href="{{ route('password.request') }}">
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link " href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif
@@ -72,7 +70,7 @@
                                         {{ __('Login') }}
                                     </button>
 
-                                   
+
                                 </div>
                             </div>
                         </form>
@@ -82,4 +80,4 @@
         </div>
     </div>
 
-</x-app>
+</x-master>

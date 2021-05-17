@@ -10,6 +10,7 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\ClassCourseController;
+use App\Http\Controllers\ScoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +93,8 @@ Route::resource('reply-thread', ReplyThreadController::class)->only('store', 'up
 Route::resource('assignment', AssignmentController::class)->only('index', 'store');
 Route::post('assignment/submit/{assignmentHeader}', [AssignmentController::class, 'submit'])->name('assignment.submit');
 Route::get('assignment/{assignmentHeader}', [AssignmentController::class, 'show'])->name('assignment.show');
+
+// Score
+Route::resource('score', ScoreController::class)->except('create');
+Route::get('score/create/{classCourseId}/{userId}', [ScoreController::class, 'create'])->name('score.create');
+Route::get('score/manage/{id}', [ScoreController::class, 'manage'])->name('score.manage');
