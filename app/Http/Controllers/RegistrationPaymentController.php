@@ -12,7 +12,7 @@ class RegistrationPaymentController extends Controller
 {
     public function viewList()
     {
-        return view('pages.payment.list', [
+        return view('payment.list', [
             'pending_payments' =>  RegistrationPayment::where('is_confirmed', 0)->get(),
             'confirmed_payments' => RegistrationPayment::where('is_confirmed', 1)->get(),
         ]);
@@ -29,7 +29,7 @@ class RegistrationPaymentController extends Controller
             'phone_number' => 'required|numeric|unique:registration_payments,pic_email'
         ]);
 
-        return view('pages.payment.create', [
+        return view('payment.create', [
             'request' => $request,
         ]);
     }
