@@ -6,7 +6,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow-sm border-0">
-                    <div class="card-header bg-dark text-white">{{ __('Login') }}</div>
+                    <div class="card-header bg-dark text-white text-center">
+                        <h5>LOGIN</h5>
+                    </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -66,11 +68,9 @@
 
                             <div class="my-3 row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-dark">
+                                    <button type="submit" class="btn bg-color-lightblue">
                                         {{ __('Login') }}
                                     </button>
-
-
                                 </div>
                             </div>
                         </form>

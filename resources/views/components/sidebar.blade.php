@@ -68,6 +68,8 @@
                         <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
                             href="{{ route('class-course.view-student') }}">
                             <span class="fa-stack fa-sm ms-n1">
+                                <i class="fas fa-circle fa-stack-2x text-orange"></i>
+                                <i class="fas fa-calendar fa-stack-1x fa-inverse text-dark"></i>
                             </span>
                             <span class="ms-2">Class Schedule</span>
                         </a>
