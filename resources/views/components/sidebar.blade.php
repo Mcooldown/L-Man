@@ -22,14 +22,148 @@
             <ul class="list-unstyled m-0 py-1">
                 <li class="side-item">
                     <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
-                        href="{{ route('dashboard') }}">
-                        <span class="fa-stack fa-sm ms-n1">
-                            <i class="fas fa-circle fa-stack-2x text-orange"></i>
-                            <i class="fas fa-info fa-stack-1x fa-inverse text-dark"></i>
-                        </span>
-                        <span class="ms-2">Main Dashboard</span>
+                    href="{{ route('dashboard') }}">
+                    <span class="fa-stack fa-sm ms-n1">
+                        <i class="fas fa-circle fa-stack-2x text-orange"></i>
+                        <i class="fas fa-info fa-stack-1x fa-inverse text-dark"></i>
+                    </span>
+                    <span class="ms-2">Main Dashboard</span>
                     </a>
                 </li>
+                @if (auth()->user()->role->name == 'Admin')    
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('class-view-list') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Class List</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('student-view-list') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Student List</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('teacher-view-list') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Teacher List</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('class-course.view-list') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Class Course List</span>
+                    </a>
+                </li>
+                @endif
+                @if (auth()->user()->role->name == 'Student')
+                <li class="side-item">
+                        <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('attendance.view-teacher-list') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Daily Attendance</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('attendance.view-student-list') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Attendances</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('activity.view-student-list') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Activity Log</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('thread.index') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Forum Discussion</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('assignment.index') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Assignment</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                        href="{{ route('score.index') }}">
+                        <span class="fa-stack fa-sm ms-n1">
+                        </span>
+                        <span class="ms-2">Score</span>
+                    </a>
+                </li>
+                @endif    
+                @if (auth()->user()->role->name == 'Teacher')
+                <li class="side-item">
+                    <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                    href="{{ route('class-course.view-student') }}">
+                    <span class="fa-stack fa-sm ms-n1">
+                    </span>
+                    <span class="ms-2">Class Schedule</span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                    href="{{ route('attendance.view-student-list') }}">
+                    <span class="fa-stack fa-sm ms-n1">
+                    </span>
+                    <span class="ms-2">Attendances</span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                    href="{{ route('activity.view-student-list') }}">
+                    <span class="fa-stack fa-sm ms-n1">
+                    </span>
+                    <span class="ms-2">Activity Log</span>
+                </a>
+            </li>
+            <li class="side-item">
+            <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                    href="{{ route('thread.index') }}">
+                    <span class="fa-stack fa-sm ms-n1">
+                    </span>
+                    <span class="ms-2">Forum Discussion</span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                    href="{{ route('assignment.index') }}">
+                    <span class="fa-stack fa-sm ms-n1">
+                    </span>
+                    <span class="ms-2">Assignment</span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a class="d-flex align-items-center text-decoration-none position-relative py-1 px-0 text-reset"
+                    href="{{ route('score.index') }}">
+                    <span class="fa-stack fa-sm ms-n1">
+                    </span>
+                    <span class="ms-2">Score</span>
+                </a>
+            </li>
+                @endif
             </ul>
         </div>
     </div>
