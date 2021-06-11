@@ -1,36 +1,26 @@
 <div id="admin-content" class="container mb-5">
     <div class="row">
         <div class="col-md-6">
-            <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                <div class="card-body m-3 text-center">
-                    <h2 class="fw-bold">Class Schedule</h2>
-                    <hr>
-                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                        <h4>Kimia</h4>
-                    </div>
-                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                        <h4>Biologi</h4>
-                    </div>
-                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                        <h4>Matematika</h4>
-                    </div>
+            <div class="card shadow-sm border-0 mb-3 bg-light">
+                <div class="card-header bg-dark text-white fs-2">Class Course</div>
+                <div class="card-body m-3">
+                        <ul>
+                            <li class="fs-3">Kimia</li>
+                            <li class="fs-3">Biologi</li>
+                            <li class="fs-3">Matematika</li>
+                        </ul>           
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                <div class="card-body m-3 text-center">
-                    <h2 class="fw-bold">Forum Discussion</h2>
-                    <hr>
-                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                        <h4>Forum1</h4>
-                    </div>
-                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                        <h4>Forum2</h4>
-                    </div>
-                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
-                        <h4>Forum3</h4> 
-                    </div>             
+            <div class="card shadow-sm border-0 mb-3 bg-light">
+                <div class="card-header bg-dark text-white fs-2">Forum Discussion</div>
+                <div class="card-body m-3">
+                        <ul>
+                            <li class="fs-3">Forum 1</li>
+                            <li class="fs-3">Forum 2</li>
+                            <li class="fs-3">Forum 3</li>
+                        </ul>           
                 </div>
             </div>
         </div>
