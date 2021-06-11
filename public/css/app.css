@@ -16944,6 +16944,24 @@ readers do not read off random characters that represent icons */
   background-color: #3f3f3f;
 }
 
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .bg-color-lightblue {
   background-color: #43DDE7;
+}
+
+.img-navbar {
+  width: 120px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(0) invert(1);
+}
+
+.landing {
+  padding: 9rem 0 6rem 0;
+  background: url("/storage/assets/landing_background.png") center center no-repeat, white;
+  background-size: cover, cover;
 }

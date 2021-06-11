@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">L-Man</a>
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img src="/storage/assets/logo.png" alt="" class="img-navbar">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,31 +10,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 @guest
-                    @if(Route::has('register'))
+                    @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link px-4" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
                         </li>
                     @endif
-                    @if(Route::has('login'))
+                    @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
+                        <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                                                                     document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                            class="d-none">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </li>
