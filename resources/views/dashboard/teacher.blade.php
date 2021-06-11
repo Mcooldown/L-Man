@@ -1,58 +1,38 @@
 <div id="admin-content" class="container mb-5">
     <div class="row">
-        <div class="col-md-4 my-2">
-            <a href="{{ route('attendance.view-teacher-list') }}" class="text-reset text-decoration-none">
-                <div class="card bg-color-lightblue">
-                    <div class="card-body">
-                        <h3 class="text-white">Daily Attendance</h3>
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                <div class="card-body m-3 text-center">
+                    <h2 class="fw-bold">Class Schedule</h2>
+                    <hr>
+                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                        <h4>Kimia</h4>
+                    </div>
+                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                        <h4>Biologi</h4>
+                    </div>
+                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                        <h4>Matematika</h4>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col-md-4 my-2">
-            <a href="{{ route('activity.view-teacher-list') }}" class="text-reset text-decoration-none">
-                <div class="card bg-color-lightblue">
-                    <div class="card-body">
-                        <h3 class="text-white">Activity Log</h3>
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                <div class="card-body m-3 text-center">
+                    <h2 class="fw-bold">Forum Discussion</h2>
+                    <hr>
+                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                        <h4>Forum1</h4>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 my-2">
-            <a href="{{ route('class-course.view-teacher') }}" class="text-reset text-decoration-none">
-                <div class="card bg-color-lightblue">
-                    <div class="card-body">
-                        <h3 class="text-white">Class Schedule</h3>
+                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                        <h4>Forum2</h4>
                     </div>
+                    <div class="card shadow-sm border-0 mb-3 bg-color-lightblue">
+                        <h4>Forum3</h4> 
+                    </div>             
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col-md-4 my-2">
-            <a href="{{ route('thread.index') }}" class="text-reset text-decoration-none">
-                <div class="card bg-color-lightblue">
-                    <div class="card-body">
-                        <h3 class="text-white">Forum Discussion</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 my-2">
-            <a href="{{ route('assignment.index') }}" class="text-reset text-decoration-none">
-                <div class="card bg-color-lightblue">
-                    <div class="card-body">
-                        <h3 class="text-white">Assignment</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 my-2">
-            <a href="{{ route('score.manage', 0) }}" class="text-reset text-decoration-none">
-                <div class="card bg-color-lightblue">
-                    <div class="card-body">
-                        <h3 class="text-white">Score</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
+    </div>  
 </div>
