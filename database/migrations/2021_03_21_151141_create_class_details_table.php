@@ -17,9 +17,9 @@ class CreateClassDetailsTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('homeroom_id');
-            $table->foreign('homeroom_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('homeroom_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('institution_id');
-            $table->foreign('institution_id')->references('id')->on('institutions')->onUpdate('cascade');
+            $table->foreign('institution_id')->references('id')->on('institutions')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

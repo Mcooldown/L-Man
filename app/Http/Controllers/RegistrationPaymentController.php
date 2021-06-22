@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ConfirmPayment;
 use App\Models\Institution;
 use App\Models\RegistrationPayment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class RegistrationPaymentController extends Controller
 {
@@ -88,6 +90,8 @@ class RegistrationPaymentController extends Controller
                 'institution_id' => $institution->id,
                 'password' => Hash::make('ADMIN' . $institution->id),
             ]);
+
+            Mail::to($payment->pic_email)->send(new ConfirmPayment($payment->pic_email, 'ADMIN' . $institution->id));
         }
         return redirect()->back()->with('success', 'Payment confirmed, PIC Account created');
     }

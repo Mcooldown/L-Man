@@ -18,9 +18,9 @@ class CreateClassCoursesTable extends Migration
             $table->unsignedBigInteger('class_id');
             $table->unsignedBigInteger('course_id');
             $table->unsignedBigInteger('teacher_id');
-            $table->foreign('class_id')->references('id')->on('class_details')->onUpdate('cascade');
-            $table->foreign('course_id')->references('id')->on('courses')->onUpdate('cascade');
-            $table->foreign('teacher_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('class_id')->references('id')->on('class_details')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('day');
             $table->string('start_time');
             $table->string('end_time');

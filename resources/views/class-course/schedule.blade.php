@@ -52,9 +52,9 @@
         <div class="table-responsive mt-3">
             <table class="table table-bordered">
                 <thead class="bg-dark text-white">
-                    <th class="align-middle text-center">Friday</th>
-                    <th class="align-middle text-center">Saturday</th>
-                    <th class="align-middle text-center">Sunday</th>
+                    <th class="align-middle text-center" style="width: 33%">Friday</th>
+                    <th class="align-middle text-center" style="width: 33%">Saturday</th>
+                    <th class="align-middle text-center" style="width: 34%">Sunday</th>
                 </thead>
                 <tbody>
                     <tr>
